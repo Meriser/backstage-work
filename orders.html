@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>訂單列表</title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <!-- All Style -->
+  <link rel="stylesheet" href="./stylesheets/all.css">
+</head>
+
+<body>
+  <div class="d-flex">
+    <aside class="sidebar vh-100 border-end bg-white d-flex flex-column pt-3">
+      <!-- 1. 後台 -->
+      <h1 class="fs-4 px-4">
+        <strong class="text-primary">無限肉肉</strong> - 後台管理
+      </h1>
+      <!-- 2. 選單 -->
+      <ul class="overflow-auto mt-3">
+        <li>
+          <a href="./home.html" class="sidebar-link active">
+            <span class="px-4">
+              <i class="bi bi-house me-2"></i>首頁
+            </span>
+          </a>
+        </li>
+        <!-- 訂單管理（包含子選項） -->
+        <li>
+          <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse">
+            <div class="d-flex justify-content-between px-4">
+              <p class="mb-0">
+                <i class="bi bi-card-list me-2"></i>訂單管理
+              </p>
+              <i class="bi bi-caret-down"></i>
+            </div>
+          </a>
+          <div class="collapse" id="menu-order">
+            <a href="./orders.html" class="sidebar-link">
+              <div class="ps-5">訂單列表</div>
+            </a>
+            <a href="./order.html" class="sidebar-link">
+              <div class="ps-5">單一訂單細節</div>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="sidebar-link">
+            <span class="px-4">
+              <i class="bi bi-list-ul me-2"></i>參考連結
+            </span>
+          </a>
+        </li>
+      </ul>
+      <!-- 3. 登出按鈕 -->
+      <a href="#" class="mt-auto sidebar-link">
+        <div class="px-4">
+          <i class="bi bi-box-arrow-left me-2"></i>登出
+        </div>
+      </a>
+    </aside>
+    <!-- Main -->
+    <main class="main">
+      <div class="bg-white w-100 border-bottom sticky-top">
+        <a href="#" class="d-inline-block py-3 px-4 border-end" id="toggle-btn">
+          <i class="bi bi-arrows-angle-expand"></i>
+        </a>
+      </div>
+
+      <!-- 主要內容 -->
+      <div class="p-4">
+        <ul class="nav nav-pills mb-4">
+          <li class="nav-item">
+            <a class="nav-link rounded-pill active" aria-current="page" href="#">所有訂單
+              <span class="badge rounded-pill text-bg-light">666</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded-pill" href="#">待處理
+              <span class="badge rounded-pill text-bg-light">33</span>
+            </a>
+          </li>
+        </ul>
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent">
+            <div class="input-group">
+              <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  操作
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <span class="input-group-text border-0 bg-transparent pe-0">
+                <i class="bi bi-search"></i>
+              </span>
+              <input type="text" class="form-control border-0 shadow-none" placeholder="Search">
+            </div>
+          </div>
+          <!-- 表格 -->
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover text-nowrap mb-0">
+                <thead class="bg-light">
+                  <tr class="align-middle">
+                    <th scope="col" class="ps-4"></th>
+                    <th scope="col" class="py-3">訂單編號</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">用戶姓名</th>
+                    <th scope="col">購買品項</th>
+                    <th scope="col">付款狀態</th>
+                    <th scope="col">購買金額</th>
+                    <th scope="col" class="pe-4">編輯</th>
+                  </tr>
+                </thead>
+                <tbody class="text-nowrap">
+                  <tr>
+                    <td scope="row" class="ps-4">
+                      <input type="checkbox" class="form-check-input p-2">
+                    </td>
+                    <td scope="row">TX123456789</td>
+                    <td>Meri@gmail.com</td>
+                    <td>美麗</td>
+                    <td>無限肉肉美食餐</td>
+                    <td>
+                      <div class="text-danger">尚未付款</div>
+                    </td>
+                    <td>1,200</td>
+                    <td class="pe-4">
+                      <div class="btn-group">
+                        <a href="#" class="btn btn-sm btn-outline-dark">
+                          編輯 <i class="bi bi-pen"></i>
+                        </a>
+                        <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          操作
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" 
+                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                            data-bs-order-id="TX123456789">刪除訂單</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="ps-4">
+                      <input type="checkbox" class="form-check-input p-2">
+                    </td>
+                    <td scope="row">TX222222222</td>
+                    <td>Lon@gmail.com</td>
+                    <td>榮恩</td>
+                    <td>雲林老先覺套餐</td>
+                    <td>
+                      <div class="text-danger">尚未付款</div>
+                    </td>
+                    <td>9,999</td>
+                    <td class="pe-4">
+                      <div class="btn-group">
+                        <a href="#" class="btn btn-sm btn-outline-dark">
+                          編輯 <i class="bi bi-pen"></i>
+                        </a>
+                        <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          操作
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" 
+                            data-bs-toggle="modal" data-bs-target="#deleteModal">刪除訂單</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="ps-4">
+                      <input type="checkbox" class="form-check-input p-2">
+                    </td>
+                    <td scope="row">TX333333333</td>
+                    <td>NN@gmail.com</td>
+                    <td>恩斯給</td>
+                    <td>牛肉麵很飽套餐</td>
+                    <td>
+                      <div class="text-success">成功付款</div>
+                    </td>
+                    <td>6,600</td>
+                    <td class="pe-4">
+                      <div class="btn-group">
+                        <a href="#" class="btn btn-sm btn-outline-dark">
+                          編輯 <i class="bi bi-pen"></i>
+                        </a>
+                        <button class="btn btn-outline-dark dropdown-toggle btn-sm" type="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          操作
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" 
+                            data-bs-toggle="modal" data-bs-target="#deleteModal">刪除訂單</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- 分頁 -->
+          <div class="card-footer bg-transparent py-3">
+            <nav aria-label="Page navigation example py-5">
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item">
+                  <a class="page-link" href="#"><i class="bi bi-caret-left-fill"></i></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"><i class="bi bi-caret-right-fill"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- 互動視窗 Modal -->
+          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">刪除訂單</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>確認刪除 「<span id="deleteText"></span>」 的訂單嗎？</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-danger">確認刪除</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./javascripts/all.js"></script>
+</body>
+
+</html>
