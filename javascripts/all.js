@@ -97,7 +97,7 @@ toggleMenuBtn.addEventListener("click", (e) => {
 const modalByDelete = document.querySelector("#deleteModal");
 modalByDelete.addEventListener("show.bs.modal", (e) => {
   const button = e.relatedTarget;
-  const orderId = button.dataset.bsOrderId;
-  const modalText = document.querySelector("#deleteText");
+  const orderId = button.getAttribute('data-bs-order-id');
+  const modalText = modalByDelete.querySelector("#deleteText");
   modalText.textContent = orderId;
 });

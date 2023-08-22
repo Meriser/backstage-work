@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>訂單列表</title>
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./stylesheets/bootstrap-icons/font/bootstrap-icons.min.css">
   <!-- All Style -->
   <link rel="stylesheet" href="./stylesheets/all.css">
 </head>
@@ -143,9 +143,10 @@
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">修改狀態</a></li>
-                          <li><a class="dropdown-item text-danger" href="#" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal"
-                            data-bs-order-id="TX123456789">刪除訂單</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
+                              data-bs-target="#deleteModal" data-bs-order-id="TX123456789">
+                              刪除訂單</a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -173,8 +174,10 @@
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">修改狀態</a></li>
-                          <li><a class="dropdown-item text-danger" href="#" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal">刪除訂單</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
+                              data-bs-target="#deleteModal" data-bs-order-id="TX222222222">
+                              刪除訂單</a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -202,8 +205,10 @@
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">修改狀態</a></li>
-                          <li><a class="dropdown-item text-danger" href="#" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal">刪除訂單</a></li>
+                          <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
+                              data-bs-target="#deleteModal" data-bs-order-id="TX333333333">
+                              刪除訂單</a>
+                          </li>
                         </ul>
                       </div>
                     </td>
@@ -219,7 +224,7 @@
                 <li class="page-item">
                   <a class="page-link" href="#"><i class="bi bi-caret-left-fill"></i></a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item"><a class="page-link" href="#">4</a></li>
@@ -231,8 +236,7 @@
             </nav>
           </div>
           <!-- 互動視窗 Modal -->
-          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -255,7 +259,7 @@
   </div>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./stylesheets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./javascripts/all.js"></script>
 </body>
